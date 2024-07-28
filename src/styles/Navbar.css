@@ -1,0 +1,92 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav .toggle-button {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li {
+    margin-left: 2rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+}
+
+ul li a:hover{
+    color: aquamarine;
+}
+
+@media (max-width: 768px) {
+
+    nav .toggle-button {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .toggle-button .bar {
+        background-color: #fff;
+        height: 2px;
+        margin: 3px 0;
+        width: 25px;
+        transition: 0.3s;
+    }
+
+    .toggle-button.active .bar1 {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 7px;
+    }
+
+    .toggle-button.active .bar2 {
+        opacity: 0;
+    }
+
+    .toggle-button.active .bar3 {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 7px;
+    }
+
+    ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        width: 200px;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+    }
+
+    ul.show {
+        display: flex;
+    }
+
+    ul li {
+        margin: 1rem 0;
+    }
+}
